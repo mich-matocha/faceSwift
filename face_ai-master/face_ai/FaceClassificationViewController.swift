@@ -92,7 +92,7 @@ class FaceClassificationViewController: UIViewController, AVCaptureVideoDataOutp
         
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
-        guard let model = try? VNCoreMLModel(for: FaceRecognition().model) else {
+        guard let model = try? VNCoreMLModel(for: test21().model) else {
                     fatalError("Unable to load model")
                 }
                 

@@ -8,14 +8,16 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
-    
+
     let name: UILabel = {
        let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.font = UIFont(name: "Avenir-Heavy", size: 50)
-        text.text = "Face AI"
-        text.textColor = .label
+        text.text = "Our App Name!"
+        text.textColor = .white
         return text
         
     }()
@@ -28,10 +30,10 @@ class ViewController: UIViewController {
         button.setTitle("Face mask", for: .normal)
         let icon = UIImage(systemName: "eye")?.resized(newSize: CGSize(width: 50, height: 30))
         button.addRightImage(image: icon!, offset: 30)
-        button.backgroundColor = .systemGreen
-        button.layer.borderColor = UIColor.systemGreen.cgColor
+        button.backgroundColor = .systemOrange
+        button.layer.borderColor = UIColor.systemOrange.cgColor
         button.layer.shadowOpacity = 0.3
-        button.layer.shadowColor = UIColor.systemGreen.cgColor
+        button.layer.shadowColor = UIColor.systemOrange.cgColor
         
         return button
     }()
@@ -80,16 +82,16 @@ class ViewController: UIViewController {
         
         return button
     }()
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor.black
         setupTabBar()
         setupLabel()
         setupButtons()
     }
-    
+
     func setupTabBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "Face AI"

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		252C5D22250435EF00469F24 /* test21.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 252C5D21250435EE00469F24 /* test21.mlmodel */; };
 		6C25EFC1240C000100672D16 /* model_face_omar_turi.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6C25EFC0240C000100672D16 /* model_face_omar_turi.mlmodel */; };
 		6C25EFC5240C006700672D16 /* DrawingBoundingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C25EFC2240C006600672D16 /* DrawingBoundingBoxView.swift */; };
 		6C25EFC6240C006700672D16 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C25EFC3240C006600672D16 /* VideoCapture.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		252C5D21250435EE00469F24 /* test21.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = test21.mlmodel; sourceTree = "<group>"; };
 		6C25EFC0240C000100672D16 /* model_face_omar_turi.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = model_face_omar_turi.mlmodel; sourceTree = "<group>"; };
 		6C25EFC2240C006600672D16 /* DrawingBoundingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingBoundingBoxView.swift; sourceTree = "<group>"; };
 		6C25EFC3240C006600672D16 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				6C25EFC3240C006600672D16 /* VideoCapture.swift */,
 				6C25EFC4240C006600672D16 /* ObjectDetectionViewController.swift */,
 				6C4D60CB240BCF130056326B /* FaceRecognition.mlmodel */,
+				252C5D21250435EE00469F24 /* test21.mlmodel */,
 				6C25EFC0240C000100672D16 /* model_face_omar_turi.mlmodel */,
 				6CA52B6D240AEE6400227EC4 /* Buttons */,
 				6CA52B65240AEE6400227EC4 /* Utilities */,
@@ -244,6 +247,7 @@
 				6C25EFC7240C006700672D16 /* ObjectDetectionViewController.swift in Sources */,
 				6CA52B7C240AEE6400227EC4 /* UIColor+Extensions.swift in Sources */,
 				6CA52B52240AED9500227EC4 /* AppDelegate.swift in Sources */,
+				252C5D22250435EF00469F24 /* test21.mlmodel in Sources */,
 				6CA52B78240AEE6400227EC4 /* UIView+Extensions.swift in Sources */,
 				6C25EFC6240C006700672D16 /* VideoCapture.swift in Sources */,
 				6C4D60CA240BCA7D0056326B /* FaceDetectionViewController.swift in Sources */,
