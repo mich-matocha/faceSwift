@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2540F6C825040DDA00768C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2540F6C725040DDA00768C7A /* AppDelegate.swift */; };
-		2540F6CA25040DDA00768C7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2540F6C925040DDA00768C7A /* SceneDelegate.swift */; };
 		2540F6CC25040DDA00768C7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2540F6CB25040DDA00768C7A /* ContentView.swift */; };
 		2540F6CE25040DDD00768C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2540F6CD25040DDD00768C7A /* Assets.xcassets */; };
 		2540F6D125040DDD00768C7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2540F6D025040DDD00768C7A /* Preview Assets.xcassets */; };
 		2540F6D425040DDD00768C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2540F6D225040DDD00768C7A /* LaunchScreen.storyboard */; };
 		2540F6DF25040DDD00768C7A /* howdyHack2020Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2540F6DE25040DDD00768C7A /* howdyHack2020Tests.swift */; };
 		2540F6EA25040DDD00768C7A /* howdyHack2020UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2540F6E925040DDD00768C7A /* howdyHack2020UITests.swift */; };
+		2540F6FA2504156200768C7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2540F6F92504156200768C7A /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* Begin PBXFileReference section */
 		2540F6C425040DDA00768C7A /* howdyHack2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = howdyHack2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2540F6C725040DDA00768C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2540F6C925040DDA00768C7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2540F6CB25040DDA00768C7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2540F6CD25040DDD00768C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2540F6D025040DDD00768C7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		2540F6E525040DDD00768C7A /* howdyHack2020UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = howdyHack2020UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2540F6E925040DDD00768C7A /* howdyHack2020UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = howdyHack2020UITests.swift; sourceTree = "<group>"; };
 		2540F6EB25040DDD00768C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2540F6F92504156200768C7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				2540F6C725040DDA00768C7A /* AppDelegate.swift */,
-				2540F6C925040DDA00768C7A /* SceneDelegate.swift */,
+				2540F6F92504156200768C7A /* SceneDelegate.swift */,
 				2540F6CB25040DDA00768C7A /* ContentView.swift */,
 				2540F6CD25040DDD00768C7A /* Assets.xcassets */,
 				2540F6D225040DDD00768C7A /* LaunchScreen.storyboard */,
@@ -268,8 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2540F6C825040DDA00768C7A /* AppDelegate.swift in Sources */,
-				2540F6CA25040DDA00768C7A /* SceneDelegate.swift in Sources */,
 				2540F6CC25040DDA00768C7A /* ContentView.swift in Sources */,
+				2540F6FA2504156200768C7A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
