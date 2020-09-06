@@ -104,7 +104,7 @@ def game():
         guess = input("What do you think the morse says? ")
         ans = checkMorseGuess(guess, str)
         print(ans)
-        if ans == str:
+        if ans == str.upper():
             print("Nice job!")
             right = not right
         elif ans.upper() == "EXIT":
