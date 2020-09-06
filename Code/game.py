@@ -1,3 +1,4 @@
+###############################GAME###############################
 import tempfile
 import wave
 import math
@@ -5,6 +6,7 @@ import struct
 import PySimpleGUI as sg
 import simpleaudio as sa
 import random
+import time
 
 
 soundFile = ''
@@ -21,7 +23,6 @@ morse = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
                  '(': '-.--.-', ')': '-.--.-', '_': '..--.-', '&': '.-...', '!': '-.-.--', '\"': '.-..-.',
                  '\;': '-.-.-.',
                  '$': '...-..-'}
-
 
 def conv2Morse(text):
     ret = ''
@@ -41,16 +42,7 @@ def conv2Morse(text):
     return ret
 
 
-def morse2text(mors):
-  mstr = mors.split(" ")
-  ret = ''
-  for w in mstr:
-      ret += list(morse.keys())[list(morse.values()).index(w)]
-  return ret
-
-
 ###############################PLAYS SOUND#########################
-
 
 def morse_to_wav(text, file_=None):
     char2signal = {'.': 0.2, '-': 0.4, '/': 0.5, ' ': 0.2}
@@ -71,6 +63,7 @@ def morse_to_wav(text, file_=None):
     wav.close()
 
     return file_
+
 
 
 Rate = 125100.0
@@ -94,56 +87,71 @@ def play(f):
     play_obj.wait_done()  # Wait until sound has finished playing
 
 
-############################# USER INTERFACE ####################################
+###############################GAME###########################################
+challengeStrings = ["TEST!", "DOG", "COW"]
 
 
-import PySimpleGUI as sg
+def checkMorseGuess(guess, answer):
+    guessArr = []
+    guessArr[:0] = guess.strip().upper()
 
-# import os
-#
-# cwd = os.getcwd()
-# fname = 'Morse_Code.png'
-#
-# with open('{}/{}'.format(cwd, fname)) as fh:
-#     Morse_Code = fh.read()
+    ansArr = []
+    ansArr[:0] = answer.upper()
+
+    ret = ''
+    for i in range(0,len(ansArr)):
+        if i < len(guessArr) and ansArr[i] == guessArr[i]:
+            ret += ansArr[i]
+        else:
+            ret += '#'
+    return ret
+
 
 sg.theme('DarkBlack')
-layout = [[sg.Text("Hello Fellow Spy, Welcome to the Morse Code Encryptor! What message would you like us to encrypt?")],
-        [sg.Input(key='-input_phrase-')],
-          [sg.Button('Encode'), sg.Button('Decode'), sg.Button('Play Sound')],
-        [sg.Text("This is your encoded/decoded message:")],
-        [sg.Output(size=(40,10), key='-OUTPUT-')],
-          [sg.Button('Clear'),sg.Button('Exit')]
-]
+layout =[[sg.Text(" Type to Start Game")],
+         [sg.Input(key='-input_phrase-')],
+         [sg.Output(size=(40,9), key='-OUTPUT-')],
+         [sg.Button('Submit')]
+         ]
+window = sg.Window("Spy Game", layout)
 
-window = sg.Window("SPY ENCODER DEVICE", layout).Finalize()
-window.Maximize()
-
-while True:
+game = True
+right = False
+stri = random.choice(challengeStrings)
+morseStr = conv2Morse(stri)
+while game:
     event, values = window.read()
 
     input_phrase = ""
-    #input_phrase2 = ""
-    game = False
 
-    # Take in user input into variable input_phrase
-    input_phrase = (str(values['-input_phrase-']))
-    #input_phrase2 = (str(values['-input_phrase2-']))
+    if not right:
+        if event == 'Submit':
+            window['-OUTPUT-'].update('')
+            print('Input your guess')
+            input_phrase = str(values['-input_phrase-'])
+            #print("fre3")
+            guess = input_phrase
+            ans = checkMorseGuess(guess, stri)
+            if ans == stri.upper():
+                #game = False
+                right = not right
+                print("Nice job!")
+                print('Would you like to keep playing? (Y/N)')
+                #right = not right
+            else:
+                print(morseStr)
+                print(ans)
 
-    if event == 'Encode':
-        print(input_phrase, "encoded:", conv2Morse(input_phrase))
-        # call encoding function
+    else:
+        if event == 'Submit':
+            input_phrase = str(values['-input_phrase-'])
+            if input_phrase == 'Y' or input_phrase == 'y':
+                right = not right
+            else:
+                print("Bye!")
+                time.sleep(5)
+                window.close()
 
-    if event == 'Play Sound':
-        print(input_phrase)
-        print(conv2Morse(input_phrase))
-        play(soundFile)
+window.close()
 
-    if event == 'Decode':
-        print("Decoded:", morse2text(input_phrase))
 
-    if event == 'Clear':
-        window['-OUTPUT-'].update('')
-
-    if event == "Exit" or event == sg.WIN_CLOSED:
-        break
